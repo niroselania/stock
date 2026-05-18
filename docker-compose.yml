@@ -1,0 +1,7 @@
+services:
+  stock-buscador:
+    build: .
+    container_name: stock-buscador
+    restart: unless-stopped
+    ports:
+      - "8088:80"
