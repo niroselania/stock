@@ -1,0 +1,12 @@
+services:
+  stock-buscador:
+    image: python:3.11-alpine
+    container_name: stock-buscador
+    restart: unless-stopped
+    working_dir: /app
+    command: python /app/server.py
+    ports:
+      - "8088:8000"
+    volumes:
+      - /opt/stock-buscador/app:/app:ro
+      - /opt/stock-buscador/data:/data
